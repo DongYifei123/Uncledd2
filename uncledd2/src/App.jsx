@@ -1,7 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router,Route  } from 'react-router-dom'
+import createBrowserHistory from 'history/createBrowserHistory'
 
-function App() {
+import Test from './components/Test';
+import { Fragment } from 'react';
+
+const history = createBrowserHistory();
+
+function a(){
   return (
     <div className="App">
       <header className="App-header">
@@ -19,6 +26,17 @@ function App() {
         </a>
       </header>
     </div>
+  );
+}
+
+function App() {
+  return(
+    <Fragment>
+      <Router  history={ history }>
+        <Route path="/" component={a} />
+        <Route path="/test" component={Test} />
+      </Router>
+    </Fragment>
   );
 }
 
