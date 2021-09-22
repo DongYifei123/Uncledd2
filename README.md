@@ -2,9 +2,8 @@
 2021.9.16
 本项目是对Uncledd2网站前端的重构，为单页面应用，后端暂用上个版本后端。
 
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 前端代理
+地址为https://uncledd2.cn
 
 ## Available Scripts
 
