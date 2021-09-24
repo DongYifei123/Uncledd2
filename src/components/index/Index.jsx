@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Carousel, Menu, Timeline } from 'antd';
+import { Carousel, Timeline } from 'antd';
 
 import './style.scss';
 
@@ -10,24 +10,7 @@ import img4 from '../../image/index/4.webp';
 import img5 from '../../image/index/5.webp';
 import wechatPublic from '../../image/index/wechatPublic.png';
 
-import { MenuOutlined, PictureOutlined, PlaySquareOutlined,  } from '@ant-design/icons';
-
-const { Item } = Menu;
-
 class Index extends Component{
-
-    Menu = () => {
-        return(
-            <div className='Menu'>
-                <Menu mode="horizontal">
-                    <Item key='index' icon={<MenuOutlined />}>首页</Item>
-                    <Item key='photo' icon={<PictureOutlined />}>照片</Item>
-                    <Item key='video' icon={<PlaySquareOutlined />}>视频</Item>
-                </Menu>
-                <h2 className='title'>Uncledd2</h2>
-            </div>
-        );
-    }
 
     banner = () => {
         return(
@@ -79,7 +62,6 @@ class Index extends Component{
     render() {
         return(
             <div className='container'>
-                { this.Menu() }
                 <div className='center'>
                     <div className='IndexBanner'>
                         { this.banner() }

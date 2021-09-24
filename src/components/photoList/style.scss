@@ -1,0 +1,24 @@
+.photoHead{
+    margin-top: 20px;
+    h2{
+        text-align: center;
+        margin-top: 15px;
+        color: #aaa;
+    }
+    p{
+        text-align:center;
+        color:#aaa;
+    }
+}
+
+.photoList{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    .card{
+        margin:10px;
+        box-shadow: rgb(226, 229, 231) 0px 2px 8px;
+    }
+}
