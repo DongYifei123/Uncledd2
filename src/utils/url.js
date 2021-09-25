@@ -6,3 +6,6 @@ export const Show20Photos = '/Show20Photos'
 
 // 下载照片接口，参数为photoId
 export const DownloadPhoto = '/DownloadPhoto'
+
+// 获取所有视频列表信息
+export const VideoShowList = '/VideoShowList';
