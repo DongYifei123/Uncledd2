@@ -1,12 +1,10 @@
 import { Component, Fragment } from 'react';
-import { Image, Card } from 'antd';
-import { DownloadOutlined } from '@ant-design/icons';
+import { Image } from 'antd';
+import PhotoItem from './photoItem.jsx';
 
 import './style.scss';
-import { host, Show20Photos, DownloadPhoto } from '../../utils/url.js';
+import {  Show20Photos } from '../../utils/url.js';
 import { get } from '../../utils/request.js';
-
-const { Meta } = Card;
 
 class PhotoList extends Component {
 
@@ -35,13 +33,6 @@ class PhotoList extends Component {
         );
     }
 
-    downloadPic = async (photoId) => {
-        console.log(photoId);
-        // 通过get请求下载图片
-        // get(DownloadPhoto, { photoId }, { responseType: 'blob' }).then((res) => {
-        // });
-    }
-
     render() {
         const { photoList } = this.state;
         return(
@@ -52,22 +43,10 @@ class PhotoList extends Component {
                 { 
                     photoList.map(photo => {
                         return(
-                            <Card
-                                className='card'
+                            <PhotoItem 
                                 key={ photo.pic_id }
-                                hoverable
-                                style={{ width: 300 }}
-                                cover={
-                                    <Image
-                                        src={ host + photo.pic_compression_url}
-                                    />
-                                }
-                                actions={[
-                                    <DownloadOutlined onClick={() => { this.downloadPic(photo.pic_id) }}/>
-                                ]}
-                            >
-                                <Meta description={photo.pic_name} />
-                            </Card>
+                                photo={ photo }
+                            />
                         );
                     })
                 }
