@@ -16,6 +16,8 @@ class PhotoItem extends Component {
     }
 
     downloadPic = async (photo) => {
+        const { downLoading } = this.state;
+        if (downLoading) return;
         this.setState({
             downLoading: true,
         })
@@ -23,7 +25,6 @@ class PhotoItem extends Component {
         await get(DownloadPhoto, { photoId: photo.pic_id }, { responseType: 'blob',
             onDownloadProgress:(ProgressEvent) => {
                 //用来计算下载量
-                // console.log(ProgressEvent);
                 const { loaded, total } = ProgressEvent;
                 this.setState({
                     downloadProcess: (loaded / total * 100).toFixed(0),
@@ -49,6 +50,7 @@ class PhotoItem extends Component {
             window.URL.revokeObjectURL(link.href); 
         });
         this.setState({
+            downloadProcess: 0,
             downLoading: false,
         })
     }
@@ -67,34 +69,22 @@ class PhotoItem extends Component {
                     />
                 }
                 actions={[
-                    // <DownloadOutlined onClick={() => { this.downloadPic(photo) }} />,
-                    <div className='download'>
+                    <div className='download' onClick={() => { this.downloadPic(photo) }} >
                         {
                             downLoading ? (
                                 <Progress
                                 strokeColor={{
-                                    '0%': '#108ee9',
-                                    '100%': '#87d068',
+                                    '0%': '#00EAFF',
+                                    '100%': '#3C8CE7',
                                 }}
                                 percent={downloadProcess}
                                 />
-                            ) : (<DownloadOutlined onClick={() => { this.downloadPic(photo) }} />)
+                            ) : (<DownloadOutlined className='downBtn' />)
                         }
                     </div>
                 ]}
             >
                 <Meta description={photo.pic_name} />
-                {/* {
-                    downLoading ? (
-                        <Progress
-                        strokeColor={{
-                            '0%': '#108ee9',
-                            '100%': '#87d068',
-                        }}
-                        percent={downloadProcess}
-                        />
-                    ) : null
-                } */}
             </Card>
         );
     }
