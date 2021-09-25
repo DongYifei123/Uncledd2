@@ -5,6 +5,9 @@
 # 前端代理
 地址为https://uncledd2.cn
 
+# 后端更新
+1. 在下载文件时后端使用分段传输，所以需要前端将二进制流转化为Blob对象再进行下载（参考https://www.cnblogs.com/art-poet/p/13730640.html）。前端需要加上下载的进度条，可以使用axios的onDownloadProgress的回调函数，但响应头中没有Content-Length字段，所以对后端下载接口中增加了Content-Length以计算响应头。
+
 ## Available Scripts
 
 In the project directory, you can run:
