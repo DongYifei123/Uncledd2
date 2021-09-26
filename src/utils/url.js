@@ -1,5 +1,5 @@
 //  主机暂时使用package.json中的代理功能，只需要对应接口即可
-export const host = 'http://localhost:8080/Uncledd2/'
+export const host = 'https://uncledd2.cn/'
 // 主机选择
 // 'http://localhost:8080/Uncledd2/'
 // 'https://uncledd2.cn/'
