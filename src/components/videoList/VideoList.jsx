@@ -54,7 +54,7 @@ class VideoList extends Component{
                                     style={{ width: 240 }}
                                     cover={
                                         <img src={ host + video.video_pic_url } alt=''/>
-                                } 
+                                    } 
                                 >
                                     <Meta title={ video.video_name } description={ video.video_intro } />
                                 </Card>
