@@ -53,7 +53,7 @@ class PhotoList extends Component {
         const scrollTop = document.documentElement.scrollTop;
         const clientHeight = document.body.clientHeight;
         const scrollHeight = document.body.scrollHeight;
-        if ( scrollTop + clientHeight > scrollHeight - 100){
+        if ( scrollTop + clientHeight > scrollHeight - 150){
             this.setState({
                 loadingMore: true,
             })
