@@ -1,0 +1,19 @@
+.videolist{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    .videoCard{
+        margin:10px;
+        box-shadow: rgb(226, 229, 231) 0px 2px 8px;
+    }
+}
+
+.videoplayer{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    .video-react {
+        box-shadow: rgb(226 229 231) 10px 10px 20px;
+    }
+}
