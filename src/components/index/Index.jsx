@@ -3,11 +3,11 @@ import { Carousel, Timeline } from 'antd';
 
 import './style.scss';
 
-import img1 from '../../image/index/1.webp';
-import img2 from '../../image/index/2.webp';
+import img1 from '../../image/index/1.jpeg';
+import img2 from '../../image/index/2.jpeg';
 import img3 from '../../image/index/3.webp';
-import img4 from '../../image/index/4.webp';
-import img5 from '../../image/index/5.webp';
+import img4 from '../../image/index/4.jpeg';
+import img5 from '../../image/index/5.jpeg';
 import wechatPublic from '../../image/index/wechatPublic.png';
 
 class Index extends Component{
@@ -15,7 +15,7 @@ class Index extends Component{
     banner = () => {
         return(
             <div className='banner'>
-                <Carousel autoplay >
+                <Carousel autoplay autoplaySpeed={2000} >
                     <img src={img1} alt='' />
                     <img src={img2} alt='' />
                     <img src={img3} alt='' />
